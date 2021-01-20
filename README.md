@@ -26,9 +26,10 @@ The PiHole container exposes ports 80, 443, and 53 on the same ports on the host
 
 PiHole documentation:
 
-- https://hub.docker.com/r/pihole/pihole
-- https://docs.pi-hole.net/
+- Docker image: https://hub.docker.com/r/pihole/pihole
+- General info: https://docs.pi-hole.net/
 
-Unbound docker image documentation:
+Unbound documentation:
 
-- https://hub.docker.com/r/klutchell/unbound/
+- Docker image: https://hub.docker.com/r/klutchell/unbound/
+- General info: https://docs.pi-hole.net/guides/dns/unbound/
