@@ -7,11 +7,11 @@ This is a custom implementation of PiHole for Docker with Unbound (provided by k
 ## Usage
 
 1. Download [git](https://git-scm.com/download/linux), [docker](https://docs.docker.com/engine/install/), and [docker-compose](https://docs.docker.com/compose/install/) onto a Raspberry Pi
-1. Clone this repo
-1. Update .env:
-   1. Choose a web password for Pi-Hole (this can be anything)
-   1. Add the IP for the host machine
-1. Run `docker-compose up -d` inside of the cloned repo's directory
+1. Clone this repo and cd into the directory
+1. Update the `.env` file:
+   1. `WEB_PASS=` - Choose a password for the Pi-Hole admin panel (this can be anything)
+   1. `HOST_IP=` - Add your Raspberry Pi's IP address
+1. Run `docker-compose up -d`
 1. Configure your network to use the Raspberry Pi's IP address for DNS
 
 ## How it Works
