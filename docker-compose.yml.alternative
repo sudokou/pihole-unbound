@@ -1,0 +1,30 @@
+version: "3.8"
+
+### An alternative docker-compose file for using Pi-Hole's DHCP
+### service. DHCP will not work with default docker-compose file.
+### This exposes Unbound on port 5053 on the host-machine.
+
+services:
+  pihole:
+    depends_on:
+      - unbound
+    container_name: pihole
+    image: pihole/pihole:latest
+    environment:
+      TZ: 'America/Chicago'
+      WEBPASSWORD: ${WEB_PASS}
+      ServerIP: ${HOST_IP}
+      PIHOLE_DNS_: '127.0.0.1:5053'
+    volumes:
+      - './etc-pihole:/etc/pihole'
+    cap_add:
+      - NET_ADMIN
+    restart: unless-stopped
+    network_mode: host
+  unbound:
+    container_name: unbound
+    image: bdagenais/unbound:latest
+    ports:
+      - '127.0.0.1:5053:53'
+      - '127.0.0.1:5053:53/udp'
+    restart: unless-stopped
