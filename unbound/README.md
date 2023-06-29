@@ -10,7 +10,7 @@ Image in Docker Hub: https://hub.docker.com/repository/docker/bdagenais/unbound
 
 - Unbound runs on default port (53) instead of 5053
 - Health check for the container checks port 53 instead of 5053
-- [My custom config](unbound.conf) is now default
+- [My custom config](https://github.com/sudokou/pihole-unbound/blob/master/unbound/unbound.conf) is now default
 
 ## Use Your Own Config
 
